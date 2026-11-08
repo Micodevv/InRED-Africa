@@ -74,7 +74,7 @@ type FigmaSiteConfiguration = {
 const siteConfigurationPath = path.resolve(__dirname, ".figma/make/site.json");
 const siteConfiguration: FigmaSiteConfiguration = fs.existsSync(siteConfigurationPath)
   ? JSON.parse(fs.readFileSync(siteConfigurationPath, "utf8"))
-  : {};
+  : { icons: { icon: "/favicon.jpg" } };
 
 /** Applies /.figma/make/site.json to the generated document shell. */
 function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
