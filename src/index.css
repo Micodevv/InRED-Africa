@@ -262,9 +262,9 @@
 
 .hero {
   display: grid;
-  grid-template-columns: 1.05fr 0.8fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
-  gap: clamp(60px, 8vw, 130px);
+  gap: clamp(24px, 4vw, 56px);
   padding-top: clamp(4rem, 6vw, 6rem);
   padding-bottom: clamp(5rem, 8vw, 8rem);
 }
@@ -313,17 +313,25 @@
   object-position: center;
 }
 .hero-art {
-  min-height: 620px;
-  align-self: stretch;
+  width: 100%;
+  aspect-ratio: 1;
+  align-self: center;
+  justify-self: center;
   position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  border-radius: 20px;
-  padding: 38px;
+  display: block;
+  padding: clamp(28px, 4vw, 42px);
   color: white;
   background: var(--deep);
   isolation: isolate;
+  -webkit-mask: url("#africa-map-mask") center / 100% 100% no-repeat;
+  mask: url("#africa-map-mask") center / 100% 100% no-repeat;
+}
+.hero-map-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 .hero-art > img {
   position: absolute;
@@ -338,14 +346,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, rgba(10, 74, 20, 0.02) 25%, rgba(10, 45, 18, 0.9) 100%);
-}
-.hero-art p {
-  position: relative;
-  z-index: 3;
-  max-width: 28ch;
-  font-size: 20px;
-  line-height: 1.35;
+  background: linear-gradient(180deg, rgba(10, 74, 20, 0.02), rgba(10, 45, 18, 0.22));
 }
 .rings {
   position: absolute;
@@ -1158,11 +1159,11 @@ footer {
     gap: 17px;
   }
   .hero {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 40px;
   }
   .hero-art {
-    min-height: 540px;
+    width: 100%;
   }
   .principles {
     grid-template-columns: repeat(3, 1fr);
@@ -1246,7 +1247,9 @@ footer {
   }
   .hero-art {
     width: 100%;
-    min-height: 520px;
+    max-width: min(100%, 440px);
+    align-self: center;
+    transform: none;
   }
   .empty-news {
     grid-template-columns: 1fr;
@@ -1348,7 +1351,6 @@ footer {
     gap: 48px;
   }
   .hero-art {
-    min-height: 410px;
     padding: 25px;
   }
   .rings {

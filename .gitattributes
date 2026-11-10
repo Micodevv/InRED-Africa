@@ -148,3 +148,4 @@
 # Keep the application logos in Git so deployment providers receive the image bytes.
 /src/assets/logo-en.jpg -filter -diff -merge -text
 /src/assets/logo-fr.jpg -filter -diff -merge -text
+/src/assets/africa-map.png -filter -diff -merge -text

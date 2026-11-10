@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import logoFr from "./assets/logo-fr.jpg";
 import logoEn from "./assets/logo-en.jpg";
+import africaMap from "./assets/africa-map.png";
 
 type Lang = "fr" | "en";
 type Page = "home" | "about" | "areas" | "partners" | "news" | "join" | "contact";
@@ -8,7 +9,7 @@ type Page = "home" | "about" | "areas" | "partners" | "news" | "join" | "contact
 const routes: Page[] = ["home", "about", "areas", "partners", "news", "join", "contact"];
 
 const photos = {
-  hero: "https://images.unsplash.com/photo-1753818268681-2686059a4dc8?auto=format&fit=crop&w=1400&q=85",
+  hero: "https://images.unsplash.com/photo-1509099863731-ef4bff19e808?auto=format&fit=crop&w=1600&q=85",
   community:
     "https://images.unsplash.com/photo-1615150338956-542fc878f7e4?auto=format&fit=crop&w=1600&q=85",
   education:
@@ -659,10 +660,40 @@ function Home({ t }: { t: typeof copy.fr | typeof copy.en }) {
             </div>
           </div>
           <div className="hero-art">
-            <img src={photos.hero} alt={t.visual} />
+            <svg className="hero-map-defs" aria-hidden="true">
+              <defs>
+                <filter id="africa-map-alpha" colorInterpolationFilters="sRGB">
+                  <feColorMatrix
+                    type="matrix"
+                    values="-0.2126 -0.7152 -0.0722 0 1
+                            -0.2126 -0.7152 -0.0722 0 1
+                            -0.2126 -0.7152 -0.0722 0 1
+                            -0.2126 -0.7152 -0.0722 0 1"
+                  />
+                </filter>
+                <mask id="africa-map-mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+                  <image
+                    href={africaMap}
+                    x="-0.18"
+                    y="-0.18"
+                    width="1.36"
+                    height="1.36"
+                    preserveAspectRatio="none"
+                    filter="url(#africa-map-alpha)"
+                  />
+                </mask>
+              </defs>
+            </svg>
+            <img
+              src={photos.hero}
+              alt={
+                t === copy.fr
+                  ? "Une jeune fille africaine engagée dans un événement communautaire"
+                  : "A young African girl taking part in a community event"
+              }
+            />
             <div className="photo-shade" />
             <div className="rings" />
-            <p>{t.visual}</p>
           </div>
         </section>
         <section className="vision-band">
