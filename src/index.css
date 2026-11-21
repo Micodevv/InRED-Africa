@@ -70,8 +70,9 @@
   margin-inline: auto;
 }
 .section {
-  margin-top: clamp(5.5rem, 8vw, 8rem);
-  margin-bottom: clamp(5.5rem, 8vw, 8rem);
+  margin-top: clamp(3rem, 4.5vw, 4.5rem);
+  margin-bottom: clamp(3rem, 4.5vw, 4.5rem);
+  padding-block: clamp(0.5rem, 0.8vw, 0.8rem);
 }
 .green {
   color: var(--green);
@@ -110,8 +111,8 @@
   gap: 28px;
 }
 .logo-link {
-  width: 178px;
-  height: 67px;
+  width: 220px;
+  height: 84px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -265,8 +266,8 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
   gap: clamp(24px, 4vw, 56px);
-  padding-top: clamp(4rem, 6vw, 6rem);
-  padding-bottom: clamp(5rem, 8vw, 8rem);
+  padding-top: clamp(2.5rem, 3.5vw, 3.5rem);
+  padding-bottom: clamp(3rem, 4.5vw, 4.5rem);
 }
 .hero-copy h1 {
   max-width: 760px;
@@ -300,7 +301,7 @@
   grid-template-columns: 1.5fr 1fr;
   grid-template-rows: 260px 260px;
   gap: 24px;
-  margin-bottom: clamp(5rem, 8vw, 8rem);
+  margin-bottom: clamp(2.5rem, 4vw, 4rem);
 }
 .photo-grid .editorial-image {
   height: 100%;
@@ -313,13 +314,14 @@
   object-position: center;
 }
 .hero-art {
-  width: 100%;
+  width: min(112%, 700px);
   aspect-ratio: 1;
   align-self: center;
   justify-self: center;
   position: relative;
   overflow: hidden;
   display: block;
+  transform: translateY(-20px);
   padding: clamp(28px, 4vw, 42px);
   color: white;
   background: var(--deep);
@@ -339,7 +341,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 40%;
+  transform: scale(1.18);
   z-index: -2;
 }
 .photo-shade {
@@ -361,7 +364,7 @@
 .editorial-image {
   position: relative;
   margin-top: 0;
-  margin-bottom: clamp(5rem, 8vw, 8rem);
+  margin-bottom: clamp(2.5rem, 4vw, 4rem);
 }
 .editorial-image img {
   display: block;
@@ -403,7 +406,7 @@
 
 .vision-band {
   background: var(--pale);
-  padding: clamp(6rem, 8vw, 8rem) 0;
+  padding: clamp(3rem, 4vw, 4rem) 0;
 }
 .vision-statement {
   max-width: 1050px;
@@ -420,6 +423,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(70px, 12vw, 180px);
+  margin-top: clamp(2rem, 3vw, 3rem);
+  margin-bottom: clamp(2.5rem, 4vw, 4rem);
 }
 .two-cols h2 {
   margin-bottom: 30px;
@@ -434,7 +439,7 @@
 }
 .line-list {
   list-style: none;
-  margin: 35px 0 0;
+  margin: 18px 0 0;
   padding: 0;
   border-top: 1px solid var(--line);
 }
@@ -442,7 +447,7 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  padding: 17px 0;
+  padding: 9px 0;
   border-bottom: 1px solid var(--line);
   color: var(--ink);
 }
@@ -451,17 +456,20 @@
 }
 .section-head {
   max-width: 780px;
-  margin-bottom: 55px;
+  margin-bottom: 28px;
 }
 .section-head h2 {
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 .section-head > p:last-child {
   color: var(--muted);
   max-width: 65ch;
 }
 .home-areas .section-head {
-  margin-bottom: 45px;
+  margin-bottom: 24px;
+}
+.home-areas {
+  margin-top: clamp(2.5rem, 4vw, 3.5rem);
 }
 .home-domain-blocks {
   display: grid;
@@ -469,6 +477,7 @@
   gap: 22px;
 }
 .home-domain-blocks article {
+  min-width: 0;
   min-height: 320px;
   padding: 32px;
   border-radius: 18px;
@@ -491,16 +500,20 @@
   font-size: clamp(20px, 2vw, 25px);
 }
 .home-domain-blocks p {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.65;
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+.home-domain-blocks .pill {
+  align-self: flex-start;
+  margin-top: auto;
 }
 .areas-page-accordion {
-  padding-bottom: clamp(6rem, 9vw, 9rem);
+  padding-bottom: clamp(3rem, 4.5vw, 4.5rem);
 }
 .domains-showcase {
   display: grid;
@@ -516,8 +529,8 @@
 }
 .domain-accordion-item > button {
   width: 100%;
-  min-height: 88px;
-  padding: 18px 0;
+  min-height: 70px;
+  padding: 10px 0;
   border: 0;
   background: transparent;
   display: grid;
@@ -599,8 +612,8 @@
 }
 .domain-accordion-panel p {
   max-width: 55ch;
-  color: var(--muted);
-  font-size: 15px;
+  color: #515c54;
+  font-size: 16px;
   line-height: 1.7;
 }
 .domains-visual {
@@ -651,7 +664,7 @@
 
 .approach {
   background: var(--pale);
-  padding: clamp(6rem, 8vw, 8rem) 0;
+  padding: clamp(3rem, 4vw, 4rem) 0;
 }
 .principles {
   display: grid;
@@ -671,12 +684,12 @@
   color: var(--muted);
 }
 .principles h3 {
-  margin: 34px 0 15px;
+  margin: 17px 0 8px;
 }
 .principles p,
 .values-grid p {
-  color: var(--muted);
-  font-size: 15px;
+  color: #515c54;
+  font-size: 16px;
   line-height: 1.65;
 }
 .values-grid p {
@@ -686,9 +699,9 @@
   -webkit-line-clamp: 3;
 }
 .cta {
-  min-height: 460px;
+  min-height: 300px;
   border-radius: 20px;
-  padding: clamp(45px, 7vw, 90px);
+  padding: clamp(24px, 3.5vw, 45px);
   background: var(--deep);
   color: white;
   display: flex;
@@ -717,21 +730,21 @@
 }
 
 .page-hero {
-  padding-top: clamp(5rem, 8vw, 8rem);
-  padding-bottom: clamp(5rem, 8vw, 8rem);
+  padding-top: clamp(2.5rem, 4vw, 4rem);
+  padding-bottom: clamp(2.5rem, 4vw, 4rem);
 }
 .page-hero h1 {
   max-width: 1000px;
 }
 .page-hero .lead {
-  margin-top: 35px;
+  margin-top: 18px;
   max-width: 72ch;
 }
 .about-intro {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 0 72px;
-  padding: 33px 0;
+  padding: 17px 0;
 }
 .about-intro p {
   color: var(--muted);
@@ -745,7 +758,7 @@
   letter-spacing: -0.025em;
 }
 .identity {
-  padding: clamp(45px, 7vw, 90px);
+  padding: clamp(24px, 3.5vw, 45px);
   border-radius: 20px;
   background: var(--pale);
   display: grid;
@@ -779,7 +792,7 @@
   padding-top: 20px;
 }
 .values-grid h3 {
-  margin: 30px 0 15px;
+  margin: 15px 0 8px;
 }
 
 .domain-icon {
@@ -798,13 +811,14 @@
   gap: 16px;
 }
 .partner-type-card {
-  min-height: 170px;
+  min-height: 140px;
   padding: 24px;
   border-radius: 16px;
   background: var(--pale);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 14px;
   border: 1px solid transparent;
 }
 .partner-type-card > div {
@@ -815,7 +829,7 @@
 .partner-type-card > div span {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
   color: #8eaa92;
   font-size: clamp(36px, 4vw, 50px);
   font-weight: 500;
@@ -838,7 +852,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px 100px;
-  padding: clamp(5rem, 9vw, 8rem);
+  padding: clamp(2.5rem, 4.5vw, 4rem);
   background: var(--pale);
   border-radius: 20px;
 }
@@ -861,7 +875,7 @@
   flex: 0 0 auto;
 }
 .quote-block {
-  padding: clamp(6rem, 9vw, 9rem) 0;
+  padding: clamp(3rem, 4.5vw, 4.5rem) 0;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -878,19 +892,13 @@
 .empty-news {
   margin-top: clamp(4rem, 6vw, 6rem);
   margin-bottom: clamp(5rem, 8vw, 8rem);
-  min-height: 430px;
+  min-height: 300px;
   border: 1px dashed #bfcac2;
   border-radius: 20px;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr;
   overflow: hidden;
   background: var(--pale);
-}
-.empty-news > img {
-  width: 100%;
-  height: 100%;
-  min-height: 430px;
-  object-fit: cover;
 }
 .empty-news-content {
   display: flex;
@@ -898,12 +906,12 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 50px;
+  padding: 40px;
 }
 .empty-news h2 {
   font-size: clamp(1.8rem, 3vw, 2.7rem);
   max-width: 600px;
-  margin: 25px 0 35px;
+  margin: 25px 0 0;
 }
 .news-mark {
   width: 70px;
@@ -915,31 +923,16 @@
   color: var(--green);
   font-size: 12px;
 }
-.hidden-component {
-  display: none;
-}
-.article-card {
-  max-width: 400px;
-}
-.article-image {
-  aspect-ratio: 16/10;
-  background: var(--pale);
-  border-radius: 16px;
-}
-.article-card time {
-  font-size: 12px;
-  color: var(--muted);
-}
 
 .join-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  padding-top: clamp(4rem, 6vw, 6rem);
-  padding-bottom: clamp(5rem, 8vw, 8rem);
+  padding-top: clamp(2rem, 3vw, 3rem);
+  padding-bottom: clamp(2.5rem, 4vw, 4rem);
 }
 .join-tile {
-  min-height: 530px;
+  min-height: 480px;
   padding: 34px;
   border-radius: 20px;
   color: white;
@@ -964,8 +957,8 @@
   color: rgba(255, 255, 255, 0.7);
 }
 .join-tile > div {
-  margin-top: auto;
-  margin-bottom: 35px;
+  margin-top: clamp(4rem, 7vw, 6rem);
+  margin-bottom: 20px;
 }
 .join-tile h2 {
   font-size: clamp(2rem, 3vw, 2.8rem);
@@ -981,14 +974,15 @@
 }
 .join-tile > .arrow {
   align-self: flex-end;
+  margin-top: auto;
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(50px, 9vw, 130px);
-  padding-top: clamp(4rem, 6vw, 6rem);
-  padding-bottom: clamp(5rem, 8vw, 8rem);
+  padding-top: clamp(2rem, 3vw, 3rem);
+  padding-bottom: clamp(2.5rem, 4vw, 4rem);
 }
 .contact-card {
   border-radius: 20px;
@@ -1095,18 +1089,18 @@
 footer {
   background: var(--deep);
   color: white;
-  padding-top: 65px;
+  padding-top: 32px;
 }
 .footer-top {
   display: grid;
   grid-template-columns: 1.4fr 0.8fr 0.8fr;
   gap: 80px;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
 }
 .footer-logo {
   display: flex;
-  width: 220px;
-  height: 88px;
+  width: 250px;
+  height: 96px;
   align-items: center;
   overflow: hidden;
   border-radius: 8px;
@@ -1158,6 +1152,9 @@ footer {
   .site-header nav {
     gap: 17px;
   }
+  .home-domain-blocks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .hero {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 40px;
@@ -1180,8 +1177,8 @@ footer {
     width: calc(100% - 32px);
   }
   .logo-link {
-    width: 145px;
-    height: 58px;
+    width: 175px;
+    height: 67px;
   }
   .menu-button {
     display: flex;
@@ -1251,12 +1248,6 @@ footer {
     align-self: center;
     transform: none;
   }
-  .empty-news {
-    grid-template-columns: 1fr;
-  }
-  .empty-news > img {
-    min-height: 360px;
-  }
   .two-cols,
   .about-intro,
   .identity,
@@ -1311,8 +1302,8 @@ footer {
     width: calc(100% - 32px);
   }
   .section {
-    margin-top: 5.5rem;
-    margin-bottom: 5.5rem;
+    margin-top: 2.75rem;
+    margin-bottom: 2.75rem;
   }
   .header-actions {
     gap: 10px;
@@ -1324,7 +1315,8 @@ footer {
     gap: 8px;
   }
   .logo-link {
-    width: 125px;
+    width: 145px;
+    height: 55px;
   }
   .lang-switch {
     gap: 2px;
@@ -1343,12 +1335,12 @@ footer {
     grid-template-columns: 1fr;
   }
   .partner-type-card {
-    min-height: 145px;
+    min-height: 125px;
   }
   .hero {
-    padding-top: 28px;
-    padding-bottom: 80px;
-    gap: 48px;
+    padding-top: 24px;
+    padding-bottom: 48px;
+    gap: 24px;
   }
   .hero-art {
     padding: 25px;
@@ -1393,7 +1385,7 @@ footer {
   .cta {
     border-radius: 0;
     width: 100%;
-    padding: 70px 20px;
+    padding: 35px 20px;
     flex-direction: column;
     align-items: stretch;
     min-height: auto;
@@ -1402,13 +1394,13 @@ footer {
     margin-top: 20px;
   }
   .page-hero {
-    padding-top: 65px;
-    padding-bottom: 65px;
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
   .identity {
     width: 100%;
     border-radius: 0;
-    padding: 65px 20px;
+    padding: 32px 20px;
   }
   .identity dl div,
   .contact-card dl div {
@@ -1423,18 +1415,32 @@ footer {
     grid-template-columns: 1fr;
     gap: 14px;
   }
-  .home-domain-blocks article,
-  .home-domain-blocks article:last-child {
-    grid-column: auto;
-    width: 100%;
+  .home-domain-blocks article {
     min-height: 290px;
     padding: 28px;
   }
   .partner-why {
     width: 100%;
     border-radius: 0;
-    padding: 65px 20px;
+    padding: 32px 20px;
     gap: 20px;
+  }
+  .partner-type-card {
+    padding: 18px;
+    gap: 10px;
+  }
+  .partner-type-card > div span {
+    font-size: 34px;
+  }
+  .partner-type-card > div span::after {
+    width: 28px;
+  }
+  .join-tile > div {
+    margin-top: 42px;
+    margin-bottom: 18px;
+  }
+  .join-tile h2 {
+    margin-bottom: 12px;
   }
   .quote-block {
     padding-left: 16px;
@@ -1443,17 +1449,14 @@ footer {
   .empty-news {
     border-radius: 14px;
   }
-  .empty-news > img {
-    min-height: 290px;
-  }
   .empty-news-content {
-    padding: 55px 24px;
+    padding: 40px 24px;
   }
   .join-tile {
     min-height: 480px;
   }
   .contact-card {
-    padding: 32px 24px;
+    padding: 24px 18px;
   }
   .footer-top {
     grid-template-columns: 1fr;
