@@ -16,6 +16,11 @@
   html {
     scroll-behavior: smooth;
   }
+  html,
+  body {
+    /* Aucun débordement horizontal de page */
+    overflow-x: clip;
+  }
   body {
     margin: 0;
     color: var(--ink);
@@ -316,7 +321,8 @@
   object-position: center;
 }
 .hero-art {
-  width: min(112%, 700px);
+  /* Contenu dans sa colonne : déborder de 112% créait un scroll horizontal */
+  width: min(100%, 760px);
   aspect-ratio: 1;
   align-self: center;
   justify-self: center;
@@ -516,6 +522,7 @@
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.65;
@@ -732,6 +739,7 @@
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
 }
 .cta {
   min-height: 300px;
@@ -1145,6 +1153,7 @@
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
+  line-clamp: 5;
 }
 .join-tile > .arrow {
   align-self: flex-end;
