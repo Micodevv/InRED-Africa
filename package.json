@@ -10,8 +10,11 @@
     "format": "oxfmt"
   },
   "dependencies": {
+    "@emailjs/browser": "^5.0.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-turnstile": "^1.1.5",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.0",
