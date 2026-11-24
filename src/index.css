@@ -344,10 +344,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* L'image (3:2) est cadrée pour placer le visage de la fille au centre
-     de la silhouette de l'Afrique (visage à ~42% x, 45% y dans la photo). */
-  object-position: 30% 40%;
-  transform: scale(1.12);
+  /* L'image (3:2) est cadrée pour placer la figure entière de la fille
+     (front, joues, menton) au centre de la silhouette de l'Afrique,
+     loin de la côte ouest / golfe de Guinée qui la rognait. */
+  object-position: 28% 40%;
+  transform: translateY(-5%) scale(1.12);
   z-index: 0;
 }
 .photo-shade {

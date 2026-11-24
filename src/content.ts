@@ -296,7 +296,7 @@ export const copy = {
     contactUs: "Contact us",
     aboutTitle: "Who are we?",
     about: [
-      "InRED Africa, whose official name is «Inclusion, Resilience & Empowerment for Development in Africa,» is a non-governmental organization (NGO) committed to promoting sustainable, inclusive, and resilient development through initiatives focused on health and human rights, education, empowerment, ethical and participatory governance, technology adoption, and environmental preservation.",
+      "InRED Africa, whose official name is «Inclusion, Resilience & Empowerment for Development in Africa» is a non-governmental organization (NGO) committed to promoting sustainable, inclusive, and resilient development through initiatives focused on health and human rights, education, empowerment, ethical and participatory governance, technology adoption, and environmental preservation.",
       "Our organisation was born from the conviction that development cannot be fully achieved without including people, strengthening their capacities, protecting their rights and enabling active participation in decisions that affect their future.",
       "We develop initiatives that improve living conditions, strengthen community resilience and promote a fairer, more caring society.",
       "Through our work, we seek to build bridges between communities, institutions, civil society organisations and partners committed to development.",
