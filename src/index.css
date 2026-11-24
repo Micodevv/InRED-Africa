@@ -344,16 +344,18 @@
   object-fit: cover;
   object-position: center 40%;
   transform: scale(1.18);
-  z-index: -2;
+  z-index: 0;
 }
 .photo-shade {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 1;
   background: linear-gradient(180deg, rgba(10, 74, 20, 0.02), rgba(10, 45, 18, 0.22));
+  pointer-events: none;
 }
 .rings {
   position: absolute;
+  z-index: 2;
   width: 520px;
   height: 520px;
   border: 1px solid rgba(255, 255, 255, 0.55);

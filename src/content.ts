@@ -1,5 +1,6 @@
 import logoFr from "./assets/logo-fr.jpg";
 import logoEn from "./assets/logo-en.jpg";
+import heroImage from "./assets/hero-community.jpg";
 
 export type Lang = "fr" | "en";
 
@@ -8,7 +9,7 @@ export type Page = "home" | "about" | "areas" | "partners" | "news" | "join" | "
 export const routes: Page[] = ["home", "about", "areas", "news", "partners", "join", "contact"];
 
 export const photos = {
-  hero: "https://images.unsplash.com/photo-1509099863731-ef4bff19e808?auto=format&fit=crop&w=1600&q=85",
+  hero: heroImage,
   education:
     "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1600&q=85",
   collaboration:
