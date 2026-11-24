@@ -11,15 +11,15 @@ export const routes: Page[] = ["home", "about", "areas", "news", "partners", "jo
 export const photos = {
   hero: heroImage,
   education:
-    "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1600&q=85",
+    "https://images.unsplash.com/photo-1620479589423-0abc990883cb?q=80&w=726&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
   collaboration:
-    "https://images.unsplash.com/photo-1653566031486-dc4ead13a35d?auto=format&fit=crop&w=1600&q=85",
+    "https://plus.unsplash.com/premium_photo-1707155465527-c5a2935b21cc?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
   health:
-    "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85",
+    "https://images.unsplash.com/photo-1666887360921-85952a86894f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
   environment:
-    "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1709842387194-85d8756d6c44?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
   technology:
-    "https://images.unsplash.com/photo-1528901166007-3784c7dd3653?auto=format&fit=crop&w=1400&q=85",
+    "https://images.unsplash.com/photo-1645620359081-60f4b3514cd7?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
   culture:
     "https://images.unsplash.com/photo-1721508490084-1b1de5b230d4?auto=format&fit=crop&w=1400&q=85",
   news: "https://images.unsplash.com/photo-1515658323406-25d61c141a6e?auto=format&fit=crop&w=1400&q=85",
@@ -114,7 +114,7 @@ export const copy = {
     contactUs: "Nous contacter",
     aboutTitle: "Qui sommes-nous ?",
     about: [
-      "InRED Africa, dont la dénomination officielle est « Inclusion, Résilience & Empowerment pour le Développement en Afrique », est une organisation non gouvernementale (ONG) engagée dans la promotion d'un développement durable, inclusif et résilient en Afrique.",
+      "InRED Africa, dont la dénomination officielle est «Inclusion, Résilience & Empowerment pour le Développement en Afrique», est une organisation non gouvernementale (ONG) engagée dans la promotion d’un développement durable, inclusif et résilient à travers des initiatives qui passent par la promotion de la santé et des droits humains, l’éducation, l’empowerment (l’autonomisation), la gouvernance éthique et participative, l’appropriation des technologies, et la préservation de l’environnement.",
       "Notre organisation est née de la conviction que le développement ne saurait être pleinement réalisé sans l'inclusion des populations, le renforcement de leurs capacités, la protection de leurs droits et leur participation active aux décisions qui affectent leur avenir.",
       "Nous œuvrons à la mise en place d'initiatives qui contribuent à améliorer les conditions de vie des populations, à renforcer la résilience des communautés et à promouvoir une société plus juste et plus solidaire.",
       "À travers nos interventions, nous cherchons à créer des passerelles entre les communautés, les institutions, les organisations de la société civile et les partenaires engagés en faveur du développement.",
@@ -184,6 +184,7 @@ export const copy = {
     downloadArticle: "Télécharger l’article",
     pdfComingSoon: "Le PDF sera ajouté dès qu’il nous sera fourni.",
     readMore: "Lire plus",
+    seeMore: "Voir plus",
     newsText:
       "À InRED Africa, nous croyons que chaque initiative compte. À travers nos actualités, nous partageons nos engagements, nos actions et les opportunités de contribuer à un développement plus inclusif et durable.",
     soon: "Nos premières actualités seront publiées ici prochainement.",
@@ -295,7 +296,7 @@ export const copy = {
     contactUs: "Contact us",
     aboutTitle: "Who are we?",
     about: [
-      "InRED Africa, officially named “Inclusion, Resilience & Empowerment for Development in Africa”, is a non-governmental organisation committed to promoting sustainable, inclusive and resilient development in Africa.",
+      "InRED Africa, whose official name is «Inclusion, Resilience & Empowerment for Development in Africa,» is a non-governmental organization (NGO) committed to promoting sustainable, inclusive, and resilient development through initiatives focused on health and human rights, education, empowerment, ethical and participatory governance, technology adoption, and environmental preservation.",
       "Our organisation was born from the conviction that development cannot be fully achieved without including people, strengthening their capacities, protecting their rights and enabling active participation in decisions that affect their future.",
       "We develop initiatives that improve living conditions, strengthen community resilience and promote a fairer, more caring society.",
       "Through our work, we seek to build bridges between communities, institutions, civil society organisations and partners committed to development.",
@@ -359,6 +360,7 @@ export const copy = {
     downloadArticle: "Download article",
     pdfComingSoon: "The PDF will be added when it is provided.",
     readMore: "Read more",
+    seeMore: "See more",
     newsText:
       "At InRED Africa, we believe every initiative matters. Through our news, we share our commitments, actions and opportunities to contribute to more inclusive and sustainable development.",
     soon: "Our first news stories will be published here soon.",

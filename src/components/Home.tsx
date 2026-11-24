@@ -15,7 +15,7 @@ export default function Home({ t }: { t: typeof copy.fr | typeof copy.en }) {
       <main>
         <HomeHero t={t} />
         <VisionMission t={t} />
-        <FeaturedNews t={t} articles={articles} title={t.featuredNewsTitle} showAllLink />
+        <FeaturedNews t={t} articles={articles} title={t.featuredNewsTitle} showAllLink featuredOnly />
         <HomeAreas t={t} />
         <HomeApproach t={t} />
         <CTA t={t} />

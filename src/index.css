@@ -157,7 +157,7 @@
   display: flex;
   align-items: center;
   gap: 3px;
-  padding: 3px;
+  padding: 6px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--pale);
@@ -183,7 +183,7 @@
 .lang-switch button.selected {
   color: var(--ink);
   background: white;
-  box-shadow: 0 1px 4px rgba(10, 74, 20, 0.12);
+  /* box-shadow: 0 1px 4px rgba(10, 74, 20, 0.12); */
 }
 .flag-icon {
   width: 20px;
@@ -342,8 +342,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 40%;
-  transform: scale(1.18);
+  /* L'image (3:2) est cadrée pour placer le visage de la fille au centre
+     de la silhouette de l'Afrique (visage à ~42% x, 45% y dans la photo). */
+  object-position: 30% 40%;
+  transform: scale(1.12);
   z-index: 0;
 }
 .photo-shade {
@@ -515,8 +517,31 @@
   font-size: 14px;
   line-height: 1.65;
 }
-.home-domain-blocks .pill {
+.see-more {
+  position: relative;
   align-self: flex-start;
+  color: var(--deep);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.see-more::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.see-more:hover::after,
+.see-more:focus-visible::after {
+  transform: scaleX(1);
+}
+.home-domain-blocks .see-more {
   margin-top: auto;
 }
 .areas-page-accordion {
@@ -738,7 +763,7 @@
 
 .page-hero {
   padding-top: clamp(2.5rem, 4vw, 4rem);
-  padding-bottom: clamp(2.5rem, 4vw, 4rem);
+  /* padding-bottom: clamp(2.5rem, 4vw, 4rem); */
 }
 .page-hero h1 {
   max-width: 1000px;
@@ -748,18 +773,18 @@
   max-width: 72ch;
 }
 .about-intro {
-  display: grid;
+  /* display: grid; */
   grid-template-columns: 1.2fr 0.8fr;
   gap: 0 72px;
-  padding: 17px 0;
+  padding: 17px 0 17px 0;
 }
 .about-intro p {
   color: var(--muted);
   margin-bottom: 25px;
-  max-width: 57ch;
+  max-width: 70ch;
 }
 .about-lead p:first-child {
-  font-size: clamp(24px, 3vw, 38px);
+  font-size: clamp(24px, 3vw, 32px);
   color: var(--ink);
   line-height: 1.35;
   letter-spacing: -0.025em;
@@ -955,9 +980,22 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 9px;
+  gap: 24px;
   color: var(--muted);
   font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.news-meta time,
+.news-meta > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.meta-icon {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
 }
 .news-read-link {
   min-height: 42px;

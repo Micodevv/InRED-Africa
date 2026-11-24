@@ -1,5 +1,4 @@
 import { copy } from "../content";
-import Button from "./Button";
 import DomainIcon from "./DomainIcon";
 import SectionHead from "./SectionHead";
 
@@ -15,9 +14,9 @@ export default function HomeAreas({ t }: { t: typeof copy.fr | typeof copy.en })
             </div>
             <h3>{title}</h3>
             <p>{text}</p>
-            <Button to="areas" tone="outline">
-              {t.readMore}
-            </Button>
+            <a className="see-more" href="#/areas">
+              {t.seeMore}
+            </a>
           </article>
         ))}
       </div>
