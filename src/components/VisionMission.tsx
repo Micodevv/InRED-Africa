@@ -1,4 +1,5 @@
 import { copy } from "../content";
+import domainsIcon from "../assets/domains.png";
 
 export default function VisionMission({ t }: { t: typeof copy.fr | typeof copy.en }) {
   return (
@@ -19,8 +20,8 @@ export default function VisionMission({ t }: { t: typeof copy.fr | typeof copy.e
           <ul className="line-list">
             {t.mission.map((item) => (
               <li key={item}>
-                {item}
-                <span>↗</span>
+                <img src={domainsIcon} alt="" aria-hidden="true" />
+                <span>{item}</span>
               </li>
             ))}
           </ul>

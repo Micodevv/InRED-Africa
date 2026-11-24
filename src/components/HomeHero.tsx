@@ -1,4 +1,4 @@
-import { copy, photos, africaMap } from "../content";
+import { copy, photos } from "../content";
 import Button from "./Button";
 
 export default function HomeHero({ t }: { t: typeof copy.fr | typeof copy.en }) {
@@ -20,34 +20,6 @@ export default function HomeHero({ t }: { t: typeof copy.fr | typeof copy.en }) 
         </div>
       </div>
       <div className="hero-art">
-        <svg className="hero-map-defs" aria-hidden="true">
-          <defs>
-            <filter id="africa-map-alpha" colorInterpolationFilters="sRGB">
-              <feColorMatrix
-                type="matrix"
-                values="-0.2126 -0.7152 -0.0722 0 1
-                        -0.2126 -0.7152 -0.0722 0 1
-                        -0.2126 -0.7152 -0.0722 0 1
-                        -0.2126 -0.7152 -0.0722 0 1"
-              />
-            </filter>
-            <mask
-              id="africa-map-mask"
-              maskUnits="objectBoundingBox"
-              maskContentUnits="objectBoundingBox"
-            >
-              <image
-                href={africaMap}
-                x="-0.06"
-                y="-0.02"
-                width="1.12"
-                height="1.03"
-                preserveAspectRatio="none"
-                filter="url(#africa-map-alpha)"
-              />
-            </mask>
-          </defs>
-        </svg>
         <img
           src={photos.hero}
           alt={

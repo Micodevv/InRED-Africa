@@ -1,6 +1,5 @@
 import logoFr from "./assets/logo-fr.jpg";
 import logoEn from "./assets/logo-en.jpg";
-import africaMap from "./assets/africa-map.jpeg";
 
 export type Lang = "fr" | "en";
 
@@ -179,6 +178,10 @@ export const copy = {
     ],
     quote: "Construisons ensemble des partenariats porteurs de changement.",
     newsTitle: "Nos actualités et nos engagements.",
+    featuredNewsTitle: "À la une",
+    allNewsTitle: "Toutes les actualités",
+    downloadArticle: "Télécharger l’article",
+    pdfComingSoon: "Le PDF sera ajouté dès qu’il nous sera fourni.",
     readMore: "Lire plus",
     newsText:
       "À InRED Africa, nous croyons que chaque initiative compte. À travers nos actualités, nous partageons nos engagements, nos actions et les opportunités de contribuer à un développement plus inclusif et durable.",
@@ -350,6 +353,10 @@ export const copy = {
     ],
     quote: "Together, let us build partnerships that drive change.",
     newsTitle: "Our news and commitments.",
+    featuredNewsTitle: "Featured",
+    allNewsTitle: "All news",
+    downloadArticle: "Download article",
+    pdfComingSoon: "The PDF will be added when it is provided.",
     readMore: "Read more",
     newsText:
       "At InRED Africa, we believe every initiative matters. Through our news, we share our commitments, actions and opportunities to contribute to more inclusive and sustainable development.",
@@ -393,4 +400,4 @@ export const copy = {
   },
 } as const;
 
-export { logoFr, logoEn, africaMap };
+export { logoFr, logoEn };

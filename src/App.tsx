@@ -17,12 +17,14 @@ function getPage(): Page {
 
 export default function App() {
   const [page, setPage] = useState<Page>(getPage());
+  const [locationHash, setLocationHash] = useState(window.location.hash);
   const [lang, setLangState] = useState<Lang>(
     () => (localStorage.getItem("inred-lang") as Lang) || "fr",
   );
   useEffect(() => {
     const onHash = () => {
       setPage(getPage());
+      setLocationHash(window.location.hash);
       window.scrollTo({ top: 0, behavior: "instant" });
     };
     window.addEventListener("hashchange", onHash);
@@ -42,7 +44,7 @@ export default function App() {
     if (page === "join") return <Join t={t} />;
     if (page === "contact") return <Contact t={t} />;
     return <Home t={t} />;
-  }, [page, t]);
+  }, [locationHash, page, t]);
   return (
     <>
       <a className="skip-link" href="#main-content">
