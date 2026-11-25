@@ -12,7 +12,7 @@ export default function Button({
 }) {
   const external = to.startsWith("mailto:");
   return (
-    <a className={`pill pill-${tone}`} href={external ? to : `/${to}`}>
+    <a className={`pill pill-${tone}`} href={external ? to : `#/${to}`}>
       <span>{children}</span>
       <Arrow />
     </a>

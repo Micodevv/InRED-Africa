@@ -6,7 +6,7 @@ export default function Footer({ t }: { t: typeof copy.fr | typeof copy.en }) {
     <footer>
       <div className="container footer-top">
         <div>
-          <a href="/" className="footer-logo" aria-label="InRED Africa">
+          <a href="#/home" className="footer-logo" aria-label="InRED Africa">
             <img
               src={isFr ? logoFr : logoEn}
               alt={isFr ? "Logo InRED Africa en français" : "InRED Africa logo in English"}
@@ -16,7 +16,7 @@ export default function Footer({ t }: { t: typeof copy.fr | typeof copy.en }) {
         </div>
         <nav>
           {routes.map((route, i) => (
-            <a href={route === "home" ? "/" : `/${route}`} key={route}>
+            <a href={`#/${route}`} key={route}>
               {t.nav[i]}
             </a>
           ))}

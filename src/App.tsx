@@ -1,11 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { copy, type Lang, type Page } from "./content";
-import {
-  currentLocation,
-  getPageFromPath,
-  handleLinkClick,
-  replaceLegacyHash,
-} from "./router";
+import { copy, routes, type Lang, type Page } from "./content";
 import About from "./components/About";
 import Areas from "./components/Areas";
 import Contact from "./components/Contact";
@@ -15,6 +9,11 @@ import Home from "./components/Home";
 import Join from "./components/Join";
 import News from "./components/News";
 import Partners from "./components/Partners";
+
+function getPage(): Page {
+  const route = window.location.hash.replace("#/", "").split(/[?#]/, 1)[0] as Page;
+  return routes.includes(route) ? route : "home";
+}
 
 const SITE_URL = "https://inredafrica.org";
 
@@ -103,27 +102,19 @@ function setMeta(attr: string, key: string, content: string) {
 }
 
 export default function App() {
-  // Anciennes URLs en #/about converties en /about au premier rendu.
-  const [page, setPage] = useState<Page>(() => {
-    replaceLegacyHash();
-    return getPageFromPath();
-  });
-  const [locationKey, setLocationKey] = useState(currentLocation());
+  const [page, setPage] = useState<Page>(getPage());
+  const [locationHash, setLocationHash] = useState(window.location.hash);
   const [lang, setLangState] = useState<Lang>(
     () => (localStorage.getItem("inred-lang") as Lang) || "fr",
   );
   useEffect(() => {
-    const onNavigate = () => {
-      setPage(getPageFromPath());
-      setLocationKey(currentLocation());
+    const onHash = () => {
+      setPage(getPage());
+      setLocationHash(window.location.hash);
       window.scrollTo({ top: 0, behavior: "instant" });
     };
-    window.addEventListener("popstate", onNavigate);
-    document.addEventListener("click", handleLinkClick);
-    return () => {
-      window.removeEventListener("popstate", onNavigate);
-      document.removeEventListener("click", handleLinkClick);
-    };
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
   }, []);
   const setLang = (next: Lang) => {
     localStorage.setItem("inred-lang", next);
@@ -131,30 +122,17 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: "instant" });
   };
   const t = copy[lang];
-  // SEO : chaque page porte son propre titre, sa description et son URL canonique.
+  // SEO : chaque page porte son propre titre et sa propre description.
   useEffect(() => {
     const { title, description } = seo[lang][page];
-    const path = page === "home" ? "/" : `/${page}`;
     document.title = title;
     setMeta("name", "description", description);
-    setMeta("name", "twitter:title", title);
-    setMeta("name", "twitter:description", description);
     setMeta("property", "og:title", title);
     setMeta("property", "og:description", description);
     setMeta("property", "og:locale", lang === "fr" ? "fr_FR" : "en_US");
-    setMeta("property", "og:url", `${SITE_URL}${path}`);
-    document.querySelector('link[rel="canonical"]')?.setAttribute("href", `${SITE_URL}${path}`);
-    const structuredData = document.querySelector('script[type="application/ld+json"]');
-    if (structuredData?.textContent) {
-      try {
-        const data = JSON.parse(structuredData.textContent);
-        data.url = `${SITE_URL}${path}`;
-        structuredData.textContent = JSON.stringify(data);
-      } catch {
-        // JSON-LD invalide : on le laisse tel quel.
-      }
-    }
-  }, [locationKey, page, lang]);
+    setMeta("name", "twitter:title", title);
+    setMeta("name", "twitter:description", description);
+  }, [page, lang]);
   const content = useMemo(() => {
     if (page === "about") return <About t={t} />;
     if (page === "areas") return <Areas t={t} />;
@@ -163,7 +141,7 @@ export default function App() {
     if (page === "join") return <Join t={t} />;
     if (page === "contact") return <Contact t={t} />;
     return <Home t={t} />;
-  }, [locationKey, page, t]);
+  }, [locationHash, page, t]);
   return (
     <>
       <a className="skip-link" href="#main-content">

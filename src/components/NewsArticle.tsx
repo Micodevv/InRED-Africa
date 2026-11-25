@@ -14,7 +14,7 @@ export default function NewsArticle({
   return (
     <main>
       <article className="container news-article">
-        <a className="news-back-link" href="/news">
+        <a className="news-back-link" href="#/news">
           ← {t.allNewsTitle}
         </a>
         <header className="news-article-header">

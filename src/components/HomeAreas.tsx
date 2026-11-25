@@ -14,7 +14,7 @@ export default function HomeAreas({ t }: { t: typeof copy.fr | typeof copy.en })
             </div>
             <h3>{title}</h3>
             <p>{text}</p>
-            <a className="see-more" href="/areas">
+            <a className="see-more" href="#/areas">
               {t.seeMore}
             </a>
           </article>
