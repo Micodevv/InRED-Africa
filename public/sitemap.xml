@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Le site utilise une navigation par hash (#/about, etc.), qui ne crée pas
+  d'URL distinctes crawlables. Seule la page d'accueil est donc déclarée.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://inredafrica.org/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

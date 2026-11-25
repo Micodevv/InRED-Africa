@@ -1,0 +1,6 @@
+# robots.txt — https://inredafrica.org
+User-agent: *
+Allow: /
+
+# Où nous publierons aussi le plan du site
+Sitemap: https://inredafrica.org/sitemap.xml
