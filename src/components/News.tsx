@@ -7,9 +7,7 @@ import PageHero from "./PageHero";
 export default function News({ t }: { t: typeof copy.fr | typeof copy.en }) {
   const language = t === copy.fr ? "fr" : "en";
   const articles = newsArticles[language];
-  const selectedArticleId = new URLSearchParams(window.location.hash.split("?")[1] ?? "").get(
-    "article",
-  );
+  const selectedArticleId = new URLSearchParams(window.location.search).get("article");
   const selectedArticle = articles.find((article) => article.id === selectedArticleId);
 
   if (selectedArticle) return <NewsArticle article={selectedArticle} t={t} />;

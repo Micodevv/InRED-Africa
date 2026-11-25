@@ -18,7 +18,7 @@ export default function Header({
   return (
     <header className="site-header">
       <div className="header-inner">
-        <a href="#/home" className="logo-link" aria-label="InRED Africa">
+        <a href="/" className="logo-link" aria-label="InRED Africa">
           <img
             src={lang === "fr" ? logoFr : logoEn}
             alt={lang === "fr" ? "Logo InRED Africa en français" : "InRED Africa logo in English"}
@@ -29,7 +29,7 @@ export default function Header({
           aria-label={lang === "fr" ? "Navigation principale" : "Main navigation"}
         >
           {routes.slice(0, 6).map((route, i) => (
-            <a className={page === route ? "active" : ""} href={`#/${route}`} key={route}>
+            <a className={page === route ? "active" : ""} href={route === "home" ? "/" : `/${route}`} key={route}>
               {t.nav[i]}
             </a>
           ))}

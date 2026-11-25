@@ -24,7 +24,7 @@ export default function FeaturedNews({
       <div className="featured-news-heading">
         <h2 id="featured-news-title">{title}</h2>
         {showAllLink && (
-          <a className="see-more" href="#/news">
+          <a className="see-more" href="/news">
             {t.allNewsTitle}
           </a>
         )}
