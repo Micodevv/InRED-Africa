@@ -11,6 +11,11 @@
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
+  # Un asset manquant doit renvoyer 404, jamais index.html (sinon le
+  # navigateur reçoit du HTML à la place du JS/CSS et garde l'ancien cache).
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^assets/ - [L]
+
   RewriteRule . /index.html [L]
 </IfModule>
 
