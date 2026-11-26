@@ -39,17 +39,18 @@ export default function NewsArticle({
             </span>
           </div>
         </header>
-        <figure className="news-article-image">
-          <img
-            src={article.image}
-            alt={article.imageAlt}
-            onError={(e) => {
-              // Image de repli si le visuel de l'article est indisponible.
-              e.currentTarget.src = "/og-image.jpg";
-            }}
-          />
-        </figure>
-        <div className="news-article-body">
+        <div className="news-article-layout">
+          <figure className="news-article-image">
+            <img
+              src={article.image}
+              alt={article.imageAlt}
+              onError={(e) => {
+                // Image de repli si le visuel de l'article est indisponible.
+                e.currentTarget.src = "/og-image.jpg";
+              }}
+            />
+          </figure>
+          <div className="news-article-body">
           {article.content.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -84,6 +85,7 @@ export default function NewsArticle({
               </button>
             )}
           </div>
+        </div>
         </div>
       </article>
     </main>
