@@ -10,10 +10,39 @@ export type NewsArticle = {
   dateTime: string;
   readTime: string;
   content: string[];
+  /** Lié à un événement ou pièce jointe (ex. lien d'inscription externe). */
+  link?: { url: string; label: string };
+  /** Fichier PDF téléchargeable de l'article, s'il existe. */
+  pdf?: string;
 };
 
 export const newsArticles: Record<Lang, NewsArticle[]> = {
   fr: [
+    {
+      id: "webinaire-conditionnement-cigarettes",
+      title:
+        "Webinaire | Lancement de la première édition du rapport sur le conditionnement des cigarettes en Afrique",
+      summary:
+        "InRED Africa co-anime le webinaire de lancement du rapport de la Région africaine de l’OMS sur le conditionnement des cigarettes. Vendredi 4 décembre 2026, sur Zoom, avec interprétation en français, en anglais et en portugais.",
+      image: "/webinaire-rapport-cigarettes.jpg",
+      imageAlt:
+        "Affiche du webinaire « The State of Cigarette Packaging in Africa » : intervenants, date du 4 décembre 2026 et QR code d’inscription",
+      date: "26 novembre 2026",
+      dateTime: "2026-11-26",
+      readTime: "3 min de lecture",
+      content: [
+        "Le rapport de la Région africaine de l’OMS sur le conditionnement des cigarettes présente un état des lieux des politiques relatives au conditionnement des cigarettes et aux avertissements sanitaires dans la Région africaine de l’OMS.",
+        "Ce webinaire mettra en lumière les progrès réalisés à l’échelle régionale, les lacunes persistantes ainsi que les possibilités de renforcer la réglementation en matière de conditionnement des produits du tabac, notamment à travers l’adoption du paquet neutre. Les échanges s’appuieront également sur les expériences et les enseignements tirés de différents pays.",
+        "Les participants examineront par ailleurs comment ce rapport peut contribuer au plaidoyer, à l’action politique, à la recherche et au renforcement de la collaboration régionale.",
+        "Rendez-vous vendredi 4 décembre 2026 à 13h GMT | 15h SAST | 14h CAT | 8h EST, sur Zoom. L’interprétation sera disponible en anglais, en français et en portugais.",
+        "Intervenants : Ms Bintou Camara Bityeki (Campaign for Tobacco-Free Kids – CTFK), Mr Rob Cunningham (Canadian Cancer Society – CCS), Mr Leonce Sessou (Inclusion, Resilience & Empowerment for Development in Africa – InRED Africa), Prof Catherine Egbe (South African Medical Research Council – SAMRC), Prof Lekan Ayo-Yusuf (Africa Centre for Tobacco Industry Monitoring and Policy Research, Université de Pretoria – ATIM) et Mr Bode Oluwafemi (Corporate Accountability and Public Participation Africa – CAPPA).",
+        "Modératrices : Ms Ouleymatou Diop (Global Alliance for Tobacco Control – GATC) et Ms Cecilia Lubanga (Kenya Tobacco Control & Health Promotion Alliance – KETCA).",
+      ],
+      link: {
+        url: "https://bit.ly/4ARyQA6",
+        label: "S’inscrire au webinaire",
+      },
+    },
     {
       id: "education-inclusive",
       title: "L’éducation inclusive, un levier d’autonomie",
@@ -80,6 +109,31 @@ export const newsArticles: Record<Lang, NewsArticle[]> = {
     },
   ],
   en: [
+    {
+      id: "webinaire-conditionnement-cigarettes",
+      title:
+        "Webinar | Launch of the first edition of the report on cigarette packaging in Africa",
+      summary:
+        "InRED Africa co-hosts the webinar launching the WHO African Region report on cigarette packaging. Friday, December 4, 2026, on Zoom, with interpretation in English, French and Portuguese.",
+      image: "/webinaire-rapport-cigarettes.jpg",
+      imageAlt:
+        "Poster for the “The State of Cigarette Packaging in Africa” webinar: speakers, December 4, 2026 date and registration QR code",
+      date: "November 26, 2026",
+      dateTime: "2026-11-26",
+      readTime: "3 min read",
+      content: [
+        "The WHO African Region report on cigarette packaging presents an overview of policies related to cigarette packaging and health warnings across the WHO African Region.",
+        "This webinar will highlight progress made at regional level, persistent gaps, and opportunities to strengthen tobacco product packaging regulation, notably through the adoption of plain packaging. Discussions will also draw on experiences and lessons learned from different countries.",
+        "Participants will also examine how this report can contribute to advocacy, policy action, research and the strengthening of regional collaboration.",
+        "Join us on Friday, December 4, 2026 at 1pm GMT | 3pm SAST | 2pm CAT | 8am EST, on Zoom. Interpretation will be available in English, French and Portuguese.",
+        "Speakers: Ms Bintou Camara Bityeki (Campaign for Tobacco-Free Kids – CTFK), Mr Rob Cunningham (Canadian Cancer Society – CCS), Mr Leonce Sessou (Inclusion, Resilience & Empowerment for Development in Africa – InRED Africa), Prof Catherine Egbe (South African Medical Research Council – SAMRC), Prof Lekan Ayo-Yusuf (Africa Centre for Tobacco Industry Monitoring and Policy Research, University of Pretoria – ATIM) and Mr Bode Oluwafemi (Corporate Accountability and Public Participation Africa – CAPPA).",
+        "Moderators: Ms Ouleymatou Diop (Global Alliance for Tobacco Control – GATC) and Ms Cecilia Lubanga (Kenya Tobacco Control & Health Promotion Alliance – KETCA).",
+      ],
+      link: {
+        url: "https://bit.ly/4ARyQA6",
+        label: "Register for the webinar",
+      },
+    },
     {
       id: "education-inclusive",
       title: "Inclusive education as a path to empowerment",

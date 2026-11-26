@@ -40,32 +40,49 @@ export default function NewsArticle({
           </div>
         </header>
         <figure className="news-article-image">
-          <img src={article.image} alt={article.imageAlt} />
+          <img
+            src={article.image}
+            alt={article.imageAlt}
+            onError={(e) => {
+              // Image de repli si le visuel de l'article est indisponible.
+              e.currentTarget.src = "/og-image.jpg";
+            }}
+          />
         </figure>
         <div className="news-article-body">
           {article.content.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
           <div className="news-download">
+            {article.link && (
+              <Button to={article.link.url} tone="green">
+                {article.link.label}
+              </Button>
+            )}
             <Button to="news" tone="outline">
               {t.allNewsTitle}
             </Button>
-            <button
-              className="pill pill-green"
-              type="button"
-              disabled
-              title={
-                isFr
-                  ? "Le PDF sera ajouté dès qu’il nous sera fourni."
-                  : "The PDF will be added when it is provided."
-              }
-            >
-              <span>{t.downloadArticle}</span>
-              <span className="arrow" aria-hidden="true">
-                ↓
-              </span>
-            </button>
-            <p>{t.pdfComingSoon}</p>
+            {article.pdf ? (
+              <a
+                className="pill pill-green"
+                href={article.pdf}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>{t.downloadArticle}</span>
+                <span className="arrow" aria-hidden="true">
+                  ↓
+                </span>
+              </a>
+            ) : (
+              <button className="pill pill-green" type="button" disabled>
+                <span>{t.downloadArticle}</span>
+                <span className="arrow" aria-hidden="true">
+                  ↓
+                </span>
+              </button>
+            )}
           </div>
         </div>
       </article>

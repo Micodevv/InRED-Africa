@@ -13,7 +13,15 @@ export default function NewsCard({
   return (
     <article className={`news-card ${featured ? "news-card-featured" : ""}`}>
       <a className="news-card-image" href={`/news?article=${article.id}`} tabIndex={-1}>
-        <img src={article.image} alt={article.imageAlt} loading="lazy" />
+        <img
+          src={article.image}
+          alt={article.imageAlt}
+          loading="lazy"
+          onError={(e) => {
+            // Image de repli si le visuel de l'article est indisponible.
+            e.currentTarget.src = "/og-image.jpg";
+          }}
+        />
       </a>
       <div className="news-card-content">
         <h2>
