@@ -963,9 +963,6 @@
   object-fit: cover;
   transition: transform 0.3s ease;
 }
-.news-card-image:hover img {
-  transform: scale(1.03);
-}
 .news-card-content {
   display: flex;
   flex: 1;
